@@ -1,0 +1,146 @@
+name: ivory
+version: 1.0
+description: Group Managment plugin
+load: STARTUP
+author: psygate
+main: com.psygate.minecraft.spigot.sovereignty.ivory.Ivory
+prefix: ivory
+database: false
+depends: [nucleus]
+loadbefore: [amethyst, sanctuary]
+
+
+commands:
+  creategroup:
+    description: Creates a new group with the given name.
+    usage: creategroup <groupname>
+    default: true
+    aliases: [ivcg]
+
+  deletegroup:
+    description: Deletes a group.
+    usage: deletegroup <groupname>
+    default: true
+    aliases: [ivdg]
+
+  transfergroup:
+    descruption: Transfers a group to another player.
+    usage: transfergroup <groupname> <playername>
+    default: true
+    aliases: [ivtg]
+
+  infogroup:
+    description: Shows information about a group. (Requires atleast member rank.)
+    usage: infogroup <groupname>
+    default: true
+    aliases: [ivig]
+
+  leavegroup:
+    description: Leaves a group. If you are the last member of this group, the group is disbanded.
+    usage: leavegroup <groupname>
+    default: true
+    aliases: [ivlg]
+
+  inviteplayer:
+    description: Invites a player to a group.
+    usage: inviteplayer <groupname> <playername>
+    default: true
+    aliases: [ivip]
+
+  ignoreplayer:
+    description: Ignores a player.
+    usage: ignoreinvites <playername>
+    default: true
+    aliases: [ivigp]
+
+  unignoreplayer:
+    description: Unignores a player.
+    usage: unignoreplayer <playername>
+    default: true
+    aliases: [ivup]
+
+  unignoregroup:
+    description: Unignores a group.
+    usage: unignoregroup <groupname>
+    default: true
+
+  listignores:
+    description: Shows information about ignored groups and players.
+    usage: /listignores
+    default: true
+    aliases: [ivug]
+
+  ignoregroup:
+    description: Ignores a group.
+    usage: /ignoregroup <name>
+    default: true
+    aliases: [ivig]
+
+  silentjoingroup:
+    description: Joins a group silently and invisibly.
+    usage: silentjoingroup <groupname>
+    default: op
+    permission: ivory.groups.silentjoin
+
+  promote:
+    desription: Promotes a member of a group to a new rank.
+    usage: promote <groupname> <membername> <rank>
+    default: true
+    aliases: [ivp]
+
+  demote:
+    desription: Promotes a member of a group to a new rank.
+    usage: promote <groupname> <membername> <rank>
+    default: true
+    aliases: [ivd]
+
+  creategrouptoken:
+    description: Creates a token that can be used to join the group
+    usage: creategrouptoken <groupname> <token> <for rank> (<max_usages>)
+    default: true
+    aliases: [ivcgt]
+
+  toggleautoaccept:
+    descriptions: Toggles the auto accept option.
+    usage: toggleautoaccept
+    default: true
+    aliases: [ivtaa]
+
+  removemember:
+    descriptions: Removes a member from a group.
+    usage: removemember <group> <membername>
+    default: true
+    aliases: [ivrm]
+
+  listgroups:
+    description: Lists all your groups with rank.
+    usage: listgroups
+    default: true
+    aliases: [ivlig]
+
+  joingroup:
+    description: Joins a group using a token.
+    usage: joingroup <grouname> <token>
+    default: true
+    aliases: [ivjg]
+
+  listranks:
+    description: Lists all available ranks.
+    usage: listranks
+    default: true
+    aliases: [ivlr]
+
+  flushcache:
+    description: Flushes the ivory cache.
+    usage: flushcache
+    default: op
+    aliases: [ivfc]
+  listinvites:
+    description: Lists available invites.
+    usage: listinvites
+    default: true
+    aliases: [ivli]
+
+permissions:
+  ivory.groups.silentjoin:
+    default: op

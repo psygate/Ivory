@@ -1,0 +1,8 @@
+reserved_prefixes: [sov_, sov, sovereigntys]
+group_limit: 10
+
+group_cache:
+  expire_after_write: 20m
+  expire_after_access: 20m
+  initial_capacity: 100
+  maximum_size: 1000
